@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>LABORATORIO</title>
+		<style type="text/css">
+			#background{position:absolute; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="background" src="../../Imagenes/fondo.jpg"/> 
+		</div>
+
+		<div id="fixed">
+			</br></br></br>
+			<div style="padding-left:510px;">
+				<img src="../../Imagenes/selloespe.jpg" alt="ESPE" height="100" >
+			</div>
+
+            <div style="padding-left:250px;">
+                <h1 style="text-align: center"> Pregunta 2</h1>
+                <p>Mediante un archivo XML, analizar dicho archivo XML utilizando el siguiente Script: <br>
+				xmlhttp = new XMLHttpRequest(); <br>
+				xmlhttp.open("GET", "ejemplo.xml", false); <br>
+				xmlhttp.send(); <br>
+				xmlDoc = xmlhttp.responseXML;</p>
+				<br>
+				<div style="text-align: center">
+					<button id="obtenerButton">Obtener Datos</button>
+					<div id="resultados" ></div>
+				</div>
+            </div>
+            <br><br>
+            <button class="btn btn-light"><a href="../../index.html">Menú Principal</a></button>
+			<script>
+				document.getElementById("obtenerButton").addEventListener("click", obtenerDatos);
+	
+				function obtenerDatos() {
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.open("GET", "animales.xml", false);
+					xmlhttp.send();
+	
+					var xmlDoc = xmlhttp.responseXML;
+					var output = "<ul>";
+	
+					var mamiferos = xmlDoc.getElementsByTagName("mamiferos");
+					for (var i = 0; i < mamiferos.length; i++) {
+						var id = mamiferos[i].getElementsByTagName("id")[0].textContent;
+						var nombre = mamiferos[i].getElementsByTagName("nombre")[0].textContent;
+						var comida = mamiferos[i].getElementsByTagName("comida")[0].textContent;
+						output += "<li>Mamífero ID: " + id + ", Nombre: " + nombre + ", Comida: " + comida + "</li>";
+					}
+	
+					var reptiles = xmlDoc.getElementsByTagName("reptil");
+					for (var i = 0; i < reptiles.length; i++) {
+						var id = reptiles[i].getElementsByTagName("id")[0].textContent;
+						var nombre = reptiles[i].getElementsByTagName("nombre")[0].textContent;
+						var comida = reptiles[i].getElementsByTagName("comida")[0].textContent;
+						output += "<li>Reptil ID: " + id + ", Nombre: " + nombre + ", Comida: " + comida + "</li>";
+					}
+	
+					var aves = xmlDoc.getElementsByTagName("aves");
+					for (var i = 0; i < aves.length; i++) {
+						var id = aves[i].getElementsByTagName("id")[0].textContent;
+						var nombre = aves[i].getElementsByTagName("nombre")[0].textContent;
+						var comida = aves[i].getElementsByTagName("comida")[0].textContent;
+						output += "<li>Ave ID: " + id + ", Nombre: " + nombre + ", Comida: " + comida + "</li>";
+					}
+	
+					var insectos = xmlDoc.getElementsByTagName("insectos");
+					for (var i = 0; i < insectos.length; i++) {
+						var id = insectos[i].getElementsByTagName("id")[0].textContent;
+						var nombre = insectos[i].getElementsByTagName("nombre")[0].textContent;
+						var comida = insectos[i].getElementsByTagName("comida")[0].textContent;
+						output += "<li>Insecto ID: " + id + ", Nombre: " + nombre + ", Comida: " + comida + "</li>";
+					}
+	
+					output += "</ul>";
+					document.getElementById("resultados").innerHTML = output;
+				}
+			</script>
+		</div>
+	</body>
+</html>

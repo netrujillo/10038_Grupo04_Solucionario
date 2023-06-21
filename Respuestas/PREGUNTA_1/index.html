@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>LABORATORIO</title>
+  <style type="text/css">
+    #background { position: absolute; width: 99%; height: 130%; }
+    #fixed { position: absolute; top: 0px; left: 0px; }
+  </style>
+  <script>
+    function extraerInformacion() {
+      var textoXML = '<tienda><celular><marca>Samsung</marca><modelo>A30</modelo><estado>nuevo</estado></celular><celular><marca>iPhone</marca><modelo>XII</modelo><estado>Usado</estado></celular></tienda>';
+      var parser = new DOMParser();
+      var xmlDoc = parser.parseFromString(textoXML, "text/xml");
+
+      var marcaCelular1 = xmlDoc.getElementsByTagName("marca")[0].childNodes[0].nodeValue;
+      var marcaCelular2 = xmlDoc.getElementsByTagName("marca")[1].childNodes[0].nodeValue;
+
+      document.getElementById("boton1").innerText = marcaCelular1;
+      document.getElementById("boton2").innerText = marcaCelular2;
+    }
+  </script>
+</head>
+<body>
+  <div>
+    <img id="background" src="Imagenes/fondo.jpg" />
+  </div>
+  <div id="fixed">
+    </br></br></br>
+    <div style="padding-left: 510px;">
+      <img src="Imagenes/selloespe.jpg" alt="ESPE" height="100" >
+    </div>
+    <div style="padding-left: 395px;">
+      <h2>
+        <p style="text-align: center; color:#165014;">DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN</p>
+        <p style="text-align: center; color:#165014;">INGENIERÍA EN SISTEMAS E INFORMÁTICA</p>
+      </h2>
+      <h3>
+        <p style="text-align: center; color:#165014;">APLICACION DE TECNOLOGIAS WEB</p>
+      </h3>
+    </div>
+    <div style="padding-left: 100px;">
+
+      <h4><p style="color:#1f1450;">NRC: 10038</p></h4>
+      <h4><p style="color:#1f1450;">GRUPO Nro: 04</p></h4>
+    </div>
+    <div style="padding-left: 250px;">
+      </br></br></br>
+      <h2><p style="text-align: center;"> LABORATORIO</p></h2>
+    </div>
+    <div style="padding-left: 250px;">
+      <div style="padding-left: 250px;">
+        <button id="boton1" onclick="alert('Marca del primer celular')">Cargar marca 1</button>
+        <button id="boton2" onclick="alert('Marca del segundo celular')">Cargar marca 2</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    extraerInformacion();
+  </script>
+</body>
+</html>

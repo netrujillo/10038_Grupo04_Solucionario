@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" Sstandalone="yes"?>
+<animales>
+    <mamiferos>
+        <id>A01</id>
+        <nombre>Panda</nombre>
+        <comida>Bambu</comida>
+    </mamiferos>
+    <mamiferos>
+        <id>A02</id>
+        <nombre>El Tigre</nombre>
+        <comida>Carne</comida>
+    </mamiferos>
+    <mamiferos>
+        <id>A03</id>
+        <nombre>Ornitorinco</nombre>
+        <comida></comida>
+    </mamiferos>
+    <mamiferos>
+        <id>A04</id>
+        <nombre></nombre>
+        <comida></comida>
+    </mamiferos>
+    <reptil>
+        <id>A05</id>
+        <nombre>Tortuga</nombre>
+        <comida>Algas Marinas</comida>
+    </reptil>
+    <reptil>
+        <id>A06</id>
+        <nombre></nombre>
+        <comida></comida>
+    </reptil>
+    <aves>
+        <id>A07</id>
+        <nombre>Perico</nombre>
+        <comida></comida>
+    </aves>
+    <aves>
+        <id>A08</id>
+        <nombre></nombre>
+        <comida></comida>
+    </aves>
+    <aves>
+        <id>A09</id>
+        <nombre></nombre>
+        <comida></comida>
+    </aves>
+    <insectos>
+        <id>A10</id>
+        <nombre></nombre>
+        <comida></comida>
+    </insectos>
+</animales>
